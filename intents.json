@@ -1,12 +1,40 @@
 {
-  "info": ["Tell me something", "Give me a fact", "I want information", "Explain this", "What do you know"],
-  "command": ["Turn off the lights", "Delete the message", "Translate this", "Start the server", "Ban the user"],
-  "joke": ["Tell me a joke", "Say something funny", "I want to laugh", "Make me laugh", "Do you know any jokes?"],
-  "definition": ["What is a black hole", "Define AI", "What is gravity", "Give me a definition", "Explain photosynthesis"],
-  "motivation": ["Give me motivation", "Encourage me", "I feel down", "Say something positive", "Lift my mood"],
-  "question": ["Where are you from?", "How does this work?", "Why is the sky blue?", "When is your birthday?", "Is it true?"],
-  "personal": ["Who are you?", "What is your name?", "Are you a bot?", "Do you have a family?", "Can I talk to you?"],
-  "math": ["What is 2+2?", "Calculate 8 * 7", "Solve this", "What's the answer to 5 squared?"],
-  "greeting": ["Hello", "Hi", "Hey", "Good morning", "Yo", "What's up?"],
-  "insult": ["You're stupid", "I hate you", "Go away", "You're useless", "Shut up"]
+  "info": [
+    "Tell me something", "Give me a fact", "I want information",
+    "Explain this", "What do you know", "Give me a piece of knowledge"
+  ],
+  "command": [
+    "Turn off the lights", "Delete the message", "Translate this",
+    "Start the server", "Ban the user", "Open the door", "Shut it down"
+  ],
+  "joke": [
+    "Tell me a joke", "Say something funny", "I want to laugh",
+    "Make me laugh", "Do you know any jokes?", "Give me humor"
+  ],
+  "definition": [
+    "What is a black hole", "Define AI", "What is gravity",
+    "Give me a definition", "Explain photosynthesis", "Define machine learning"
+  ],
+  "motivation": [
+    "Give me motivation", "Encourage me", "I feel down",
+    "Say something positive", "Lift my mood", "Help me feel better"
+  ],
+  "question": [
+    "Where are you from?", "How does this work?", "Why is the sky blue?",
+    "When is your birthday?", "Is it true?", "Do you know the answer?"
+  ],
+  "personal": [
+    "Who are you?", "What is your name?", "Are you a bot?",
+    "Do you have a family?", "Can I talk to you?", "Do you remember me?"
+  ],
+  "math": [
+    "What is 2+2?", "Calculate 8 * 7", "Solve this equation",
+    "What's the answer to 5 squared?", "Give me the result", "Math question"
+  ],
+  "greeting": [
+    "Hello", "Hi", "Hey", "Good morning", "Yo", "What's up?"
+  ],
+  "insult": [
+    "You're stupid", "I hate you", "Go away", "You're useless", "Shut up", "You're dumb"
+  ]
 }
