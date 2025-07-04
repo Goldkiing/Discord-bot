@@ -1,0 +1,6 @@
+discord.py
+textblob
+nltk
+numpy
+sentence-transformers
+scikit-learn
