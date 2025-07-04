@@ -1,10 +1,16 @@
 # config.py
 
-DISCORD_TOKEN = "YOUR_DISCORD_BOT_TOKEN"  # Replace this with your actual bot token
-API_URL = "https://your-glitch-api.glitch.me"  # Replace with your Glitch API base URL
+# 🔐 Discord bot token (DO NOT share this)
+DISCORD_TOKEN = "YOUR_DISCORD_BOT_TOKEN"
 
+# 🌐 Optional external API URL (for future use or Glitch API)
+API_URL = "https://your-glitch-api.glitch.me"
+
+# 🎯 Similarity threshold for intent/sentence matching
 SIMILARITY_THRESHOLD = 0.6
 
-# Optional channel restrictions (leave empty if not used)
-ALLOWED_LEARN_CHANNELS = []
-REPLY_CHANNELS = []
+# 👑 Owner ID of the bot (YOUR Discord user ID, as an integer)
+OWNER_ID = 123456789012345678  # 🔁 Replace with your actual Discord ID
+
+# ⚙️ Path to the settings file (contains allowed users and channels)
+SETTINGS_FILE = "settings.json"
