@@ -1,1 +1,5 @@
-
+discord.py
+requests
+spacy
+sentence-transformers
+scikit-learn
