@@ -1,5 +1,9 @@
-from discord import app_commands, Interaction
-from config import OWNER_ID, SETTINGS_FILE
+# commands/authorize_command.py
+
+import discord
+from discord import app_commands
+from discord.ext import commands
+from config import SETTINGS_FILE, OWNER_ID
 import json
 import os
 
@@ -13,12 +17,28 @@ def save_settings(settings):
     with open(SETTINGS_FILE, "w", encoding="utf-8") as f:
         json.dump(settings, f, indent=2)
 
-def is_authorized(user_id, guild_owner_id):
-    settings = load_settings()
-    # أضف مالك السيرفر تلقائيًا
-    if guild_owner_id not in settings["authorized_users"]:
-        settings["authorized_users"].append(guild_owner_id)
-        save_settings(settings)
-    return user_id in settings["authorized_users"] or user_id == guild_owner_id or user_id == OWNER_ID
+class AuthorizeCommand(commands.Cog):
+    def __init__(self, bot):
+        self.bot = bot
 
-# يمكنك استخدام is_authorized في أي أمر آخر لاحقًا
+    @app_commands.command(name="authorize", description="Grant permission to a user.")
+    @app_commands.describe(user="Select the user to authorize.")
+    async def authorize(self, interaction: discord.Interaction, user: discord.User):
+        settings = load_settings()
+        author_id = interaction.user.id
+        guild_owner_id = interaction.guild.owner_id if interaction.guild else None
+
+        # Only the bot owner or server owner can authorize
+        if author_id != OWNER_ID and author_id != guild_owner_id:
+            await interaction.response.send_message("❌ Only the bot owner or server owner can authorize users.")
+            return
+
+        if user.id in settings["authorized_users"]:
+            await interaction.response.send_message(f"ℹ️ {user.mention} is already authorized.")
+        else:
+            settings["authorized_users"].append(user.id)
+            save_settings(settings)
+            await interaction.response.send_message(f"✅ {user.mention} has been authorized.")
+
+async def setup(bot):
+    await bot.add_cog(AuthorizeCommand(bot))
