@@ -1,15 +1,17 @@
+# Use official Python base image
 FROM python:3.11
 
+# Set working directory inside the container
 WORKDIR /app
 
-# Copy only requirements if موجود
-COPY requirements.txt .  # احذف هذا السطر لو ما عندك requirements.txt
+# Copy the dependencies file first
+COPY requirements.txt .
 
-# Install dependencies if موجود
-# RUN pip install --no-cache-dir -r requirements.txt  ← فقط إذا عندك ملف requirements
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy all project files
+# Copy the rest of the application files
 COPY . .
 
-# Run main file (عدّل الاسم لو مختلف)
-CMD ["python", "api_handler.py"]
+# Start the main Python application
+CMD ["python", "main.py"]
